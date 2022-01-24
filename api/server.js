@@ -23,20 +23,21 @@ const server = express();
 
 server.use(session({
   name: 'chocolatechip',
-  secret: 'shh',
+  secret: 'jayson',
   saveUninitialized: false,
   resave: false,
   store: new Store({
     knex,
-    createTable: true,
+    createtable: true,
     clearInterval: 1000 * 60 * 10,
     tablename: 'sessions',
-    sidfieldname: 'sid',
+    sidfieldname: 'sid'
   }),
   cookie: {
     maxAge: 1000 * 60 * 10,
     secure: false,
     httpOnly: true,
+    //sameSite: 'none'
   }
 }))
 
